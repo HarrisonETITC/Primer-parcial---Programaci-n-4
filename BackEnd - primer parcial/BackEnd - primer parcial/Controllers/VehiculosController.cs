@@ -11,47 +11,47 @@ namespace BackEnd___primer_parcial.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class RepuestoesController : ControllerBase
+    public class VehiculosController : ControllerBase
     {
         private readonly TallerContext _context;
 
-        public RepuestoesController(TallerContext context)
+        public VehiculosController(TallerContext context)
         {
             _context = context;
         }
 
-        // GET: api/Repuestoes
+        // GET: api/Vehiculos
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Repuesto>>> GetRepuestos()
+        public async Task<ActionResult<IEnumerable<Vehiculo>>> GetVehiculos()
         {
-            return await _context.Repuestos.ToListAsync();
+            return await _context.Vehiculos.ToListAsync();
         }
 
-        // GET: api/Repuestoes/5
+        // GET: api/Vehiculos/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Repuesto>> GetRepuesto(int id)
+        public async Task<ActionResult<Vehiculo>> GetVehiculo(int id)
         {
-            var repuesto = await _context.Repuestos.FindAsync(id);
+            var vehiculo = await _context.Vehiculos.FindAsync(id);
 
-            if (repuesto == null)
+            if (vehiculo == null)
             {
                 return NotFound();
             }
 
-            return repuesto;
+            return vehiculo;
         }
 
-        // PUT: api/Repuestoes/5
+        // PUT: api/Vehiculos/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutRepuesto(int id, Repuesto repuesto)
+        public async Task<IActionResult> PutVehiculo(int id, Vehiculo vehiculo)
         {
-            if (id != repuesto.IdRepuestos)
+            if (id != vehiculo.IdVehiculos)
             {
                 return BadRequest();
             }
 
-            _context.Entry(repuesto).State = EntityState.Modified;
+            _context.Entry(vehiculo).State = EntityState.Modified;
 
             try
             {
@@ -59,7 +59,7 @@ namespace BackEnd___primer_parcial.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!RepuestoExists(id))
+                if (!VehiculoExists(id))
                 {
                     return NotFound();
                 }
@@ -72,36 +72,36 @@ namespace BackEnd___primer_parcial.Controllers
             return NoContent();
         }
 
-        // POST: api/Repuestoes
+        // POST: api/Vehiculos
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Repuesto>> PostRepuesto(Repuesto repuesto)
+        public async Task<ActionResult<Vehiculo>> PostVehiculo(Vehiculo vehiculo)
         {
-            _context.Repuestos.Add(repuesto);
+            _context.Vehiculos.Add(vehiculo);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetRepuesto", new { id = repuesto.IdRepuestos }, repuesto);
+            return CreatedAtAction("GetVehiculo", new { id = vehiculo.IdVehiculos }, vehiculo);
         }
 
-        // DELETE: api/Repuestoes/5
+        // DELETE: api/Vehiculos/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteRepuesto(int id)
+        public async Task<IActionResult> DeleteVehiculo(int id)
         {
-            var repuesto = await _context.Repuestos.FindAsync(id);
-            if (repuesto == null)
+            var vehiculo = await _context.Vehiculos.FindAsync(id);
+            if (vehiculo == null)
             {
                 return NotFound();
             }
 
-            _context.Repuestos.Remove(repuesto);
+            _context.Vehiculos.Remove(vehiculo);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool RepuestoExists(int id)
+        private bool VehiculoExists(int id)
         {
-            return _context.Repuestos.Any(e => e.IdRepuestos == id);
+            return _context.Vehiculos.Any(e => e.IdVehiculos == id);
         }
     }
 }

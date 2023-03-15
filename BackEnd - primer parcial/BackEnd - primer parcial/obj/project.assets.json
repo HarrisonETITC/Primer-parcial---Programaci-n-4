@@ -10235,9 +10235,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Harrison\\Documents\\Primer parcial - Programación 4\\BackEnd - primer parcial\\BackEnd - primer parcial\\BackEnd - primer parcial.csproj",
-      "projectName": "BackEnd - primer parcial",
-      "projectPath": "C:\\Users\\Harrison\\Documents\\Primer parcial - Programación 4\\BackEnd - primer parcial\\BackEnd - primer parcial\\BackEnd - primer parcial.csproj",
+      "projectUniqueName": "C:\\Users\\Harrison\\Documents\\Primer parcial - Programación 4\\BackEnd - primer parcial\\BackEnd - primer parcial\\BackEnd-primer parcial.csproj",
+      "projectName": "BackEnd-primer parcial",
+      "projectPath": "C:\\Users\\Harrison\\Documents\\Primer parcial - Programación 4\\BackEnd - primer parcial\\BackEnd - primer parcial\\BackEnd-primer parcial.csproj",
       "packagesPath": "C:\\Users\\Harrison\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Harrison\\Documents\\Primer parcial - Programación 4\\BackEnd - primer parcial\\BackEnd - primer parcial\\obj\\",
       "projectStyle": "PackageReference",

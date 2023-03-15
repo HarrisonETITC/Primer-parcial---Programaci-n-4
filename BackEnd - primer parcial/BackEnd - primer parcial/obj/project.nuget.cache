@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "z9ZRnX5bdVqL4MRVEtKPM3oG75WX95vZkPSAFVJLt+Nx8MTudz51UFsYJnsat3+VI6/nep/wJqs8h5e2yOz3JA==",
+  "dgSpecHash": "eys/+b4FmlRbmaeAM1BCmZhYeA0yIGSiypm9JqTsxkQsbSqcPsInydpVTKfPx7lAOXuFT/VPOEw8LBW/Yt1qig==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Harrison\\Documents\\Primer parcial - Programación 4\\BackEnd - primer parcial\\BackEnd - primer parcial\\BackEnd - primer parcial.csproj",
+  "projectFilePath": "C:\\Users\\Harrison\\Documents\\Primer parcial - Programación 4\\BackEnd - primer parcial\\BackEnd - primer parcial\\BackEnd-primer parcial.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Harrison\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Harrison\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
