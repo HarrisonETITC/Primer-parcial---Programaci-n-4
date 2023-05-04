@@ -1,0 +1,16 @@
+<div class="main-container">
+    <h2 style="display: block; text-align: center;margin-bottom: 10px;">Bienvenido</h2>
+    <form [formGroup]="formularioLogin" (ngSubmit)="mostrarAlert()">
+        <mat-form-field appearance="fill" style="display:block">
+            <mat-label>Nombre de usuario</mat-label>
+            <input matInput placeholder="Hola" formControlName="correo" required>
+            <mat-error *ngIf="formularioLogin.controls.correo.invalid">{{getErrorMessage("correo")}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill" style="display:block">
+            <mat-label>Contraseña</mat-label>
+            <input matInput formControlName="contra" type="password">
+            <mat-error *ngIf="formularioLogin.controls.contra.invalid">{{getErrorMessage("contra")}}</mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary">Ingresar</button>
+    </form>
+</div>

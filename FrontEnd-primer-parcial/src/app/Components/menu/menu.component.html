@@ -5,8 +5,9 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="/Vehiculos">Vehiculos</a>
-      <a mat-list-item href="/Repuestos">Repuestos</a>
+      <a mat-list-item href="/Login" *ngIf="!logueado">Log-in</a>
+      <a mat-list-item href="/Vehiculos" *ngIf="logueado">Vehiculos</a>
+      <a mat-list-item href="/Repuestos" *ngIf="logueado">Repuestos</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

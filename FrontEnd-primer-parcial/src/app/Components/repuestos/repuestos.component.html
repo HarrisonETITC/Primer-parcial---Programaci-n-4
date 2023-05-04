@@ -1,1 +1,24 @@
-<p>repuestos works!</p>
+<div class="main-container">
+    <button mat-raised-button color="primary" (click)="cambiarTablaFormulario()">
+        {{!mostrarTabla? 'Ver datos' : 'Mostrar formulario'}}
+    </button>
+    <app-table [dataSource]="source" [displayedColumns]="columnas" *ngIf="mostrarTabla"></app-table>
+    <form [formGroup]="formularioRepuestos" (ngSubmit)="mostrarAlert()" *ngIf="!mostrarTabla">
+        <mat-form-field appearance="fill" style="display:block">
+            <mat-label>Ingrese un valor</mat-label>
+            <input matInput formControlName="valor" type="number">
+            <mat-error *ngIf="formularioRepuestos.controls.valor.invalid">{{getErrorMessage("valor")}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill" style="display:block">
+            <mat-label>Ingrese un tipo</mat-label>
+            <input matInput formControlName="tipo">
+            <mat-error *ngIf="formularioRepuestos.controls.tipo.invalid">{{getErrorMessage("tipo")}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill" style="display:block">
+            <mat-label>Ingrese el vehìculo</mat-label>
+            <input matInput formControlName="vehiculo" type="number">
+            <mat-error *ngIf="formularioRepuestos.controls.vehiculo.invalid">{{getErrorMessage("vehiculo")}}</mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary">Enviar datos</button>
+    </form>
+</div>

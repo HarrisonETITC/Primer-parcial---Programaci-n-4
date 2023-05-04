@@ -10,10 +10,7 @@ export class ApiService {
   url:string = "https://localhost:7110/api/";
   
   async getAll(Controller: string) {
-    let response: any;
-    await this.http.get(this.url+Controller).toPromise().then(res=>{
-      response = res;
-    });
+    let response = this.http.get(this.url+Controller);
 
     return response;
   }

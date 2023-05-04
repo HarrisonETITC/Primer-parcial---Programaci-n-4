@@ -1,1 +1,29 @@
-<p>vehiculos works!</p>
+<div class="main-container">
+    <button mat-raised-button color="primary" (click)="cambiarTablaFormulario()">
+        {{!mostrarTabla? 'Ver datos' : 'Mostrar formulario'}}
+    </button>
+    <app-table [dataSource]="source" [displayedColumns]="columnas" *ngIf="mostrarTabla"></app-table>
+    <form [formGroup]="formularioVehiculos" (ngSubmit)="mostrarAlert()" *ngIf="!mostrarTabla">
+        <mat-form-field appearance="fill" style="display:block">
+            <mat-label>Ingrese una marca</mat-label>
+            <input matInput placeholder="Nissan" formControlName="marca" required>
+            <mat-error *ngIf="formularioVehiculos.controls.marca.invalid">{{getErrorMessage("marca")}}</mat-error>
+          </mat-form-field>
+        <mat-form-field appearance="fill" style="display:block">
+            <mat-label>Ingrese un color</mat-label>
+            <input matInput placeholder="Rojo" formControlName="color" required>
+            <mat-error *ngIf="formularioVehiculos.controls.color.invalid">{{getErrorMessage("color")}}</mat-error>
+          </mat-form-field>
+        <mat-form-field appearance="fill" style="display:block">
+            <mat-label>Ingrese un modelo</mat-label>
+            <input matInput formControlName="modelo" required>
+            <mat-error *ngIf="formularioVehiculos.controls.modelo.invalid">{{getErrorMessage("modelo")}}</mat-error>
+          </mat-form-field>
+        <mat-form-field appearance="fill" style="display:block">
+            <mat-label>Ingrese la placa</mat-label>
+            <input matInput placeholder="ABC123" formControlName="placa" required>
+            <mat-error *ngIf="formularioVehiculos.controls.placa.invalid">{{getErrorMessage("placa")}}</mat-error>
+          </mat-form-field>
+          <button mat-raised-button color="primary">Enviar datos</button>
+    </form>
+</div>
